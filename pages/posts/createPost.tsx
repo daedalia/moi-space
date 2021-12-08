@@ -27,7 +27,7 @@ function Create(props: CreateProps) {
         if (null !== body.current) {
             post.body = body.current.value
         }
-console.log(post);
+        
         // Make the API request
         await fetch(props.url, {
             method: "post",
@@ -57,7 +57,7 @@ console.log(post);
 export async function getStaticProps(context: any) {
     return {
         props: {
-            url: process.env.API_URL,
+            url: "http://localhost:3000/api/posts",
         },
     }
 }

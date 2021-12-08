@@ -15,7 +15,7 @@ function Index(props: IndexProps) {
         <h1>Blog posts</h1>
         {posts.map(post => (
             <div key={post._id}>
-              <Link href={`/posts/${post._id}`}>
+              <Link href={`/posts/${post._id}`} passHref>
                 <h3 style={{ cursor: "pointer" }}>
                   {post.title}
                   {post.body}
@@ -24,7 +24,7 @@ function Index(props: IndexProps) {
               </Link>
             </div>
         ))}
-          <Link href="/posts/createPost"><button>Create a Post</button></Link>
+          <Link href="/posts/createPost" passHref><button>Create a Post</button></Link>
       </div>
   )
 }
