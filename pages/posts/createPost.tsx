@@ -57,7 +57,7 @@ function Create(props: CreateProps) {
 export async function getStaticProps(context: any) {
     return {
         props: {
-            url: "http://localhost:3000/api/posts",
+            url: process.env.API_URL as string,
         },
     }
 }
