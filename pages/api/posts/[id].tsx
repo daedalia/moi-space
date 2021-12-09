@@ -22,6 +22,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // RESPONSE PUT REQUESTS
         PUT: async (req: NextApiRequest, res: NextApiResponse) => {
             const { Post } = await connect() // connect to database
+            res.status(200).end()
             res.json(
                 await Post.findByIdAndUpdate(id, req.body, { new: true }).catch(catcher)
             )
@@ -29,6 +30,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // RESPONSE FOR DELETE REQUESTS
         DELETE: async (req: NextApiRequest, res: NextApiResponse) => {
             const { Post } = await connect() // connect to database
+            res.status(200).end()
             res.json(await Post.findByIdAndRemove(id).catch(catcher))
         },
     }
