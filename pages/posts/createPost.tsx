@@ -57,7 +57,7 @@ function Create(props: CreateProps) {
 export async function getStaticProps(context: any) {
     return {
         props: {
-            url: process.env.API_URL as string,
+            url: process.env.BLOG_API_URL as string,
         },
     }
 }
