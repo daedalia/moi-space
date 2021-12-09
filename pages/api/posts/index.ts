@@ -7,7 +7,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const method: keyof ResponseFunctions = req.method as keyof ResponseFunctions
 
     //function for catch errors
-    const catcher = (error: Error) => res.status(400).json({ error })
+    const catcher = (error: Error) => res.status(400).json({ error })
     
     // Potential Responses
     const handleCase: ResponseFunctions = {
@@ -20,6 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         // RESPONSE POST REQUESTS
         POST: async (req: NextApiRequest, res: NextApiResponse) => {
             const { Post } = await connect() // connect to database
+            res.status(200).end()
             res.json(await Post.create(req.body).catch(catcher))
         },
     }
