@@ -1,35 +1,30 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { connect } from "../../../helper/mongodb"
 import { ResponseFunctions } from "../../../types/ResponseFunctions"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     //capture request method, we type it as a key of ResponseFunc to reduce typing later
     const method: keyof ResponseFunctions = req.method as keyof ResponseFunctions
 
+    const API_KEY = process.env.PEXELS_API_KEY as string;
+    const headers: HeadersInit = {
+        'Authorization': API_KEY
+    }
+    const opts: RequestInit = {
+        method: 'GET',
+        headers,
+    };
+    
     //function for catch errors
     const catcher = (error: Error) => res.status(400).json({ error })
 
-    // GRAB ID FROM req.query (where next stores params)
-    const id: string = req.query.id as string
-
-    // Potential Responses for /todos/:id
+    // Potential Responses
     const handleCase: ResponseFunctions = {
         // RESPONSE FOR GET REQUESTS
         GET: async (req: NextApiRequest, res: NextApiResponse) => {
-            const { Post } = await connect() // connect to database
-            res.json(await Post.findById(id).catch(catcher))
-        },
-        // RESPONSE PUT REQUESTS
-        PUT: async (req: NextApiRequest, res: NextApiResponse) => {
-            const { Post } = await connect() // connect to database
-            res.json(
-                await Post.findByIdAndUpdate(id, req.body, { new: true }).catch(catcher)
-            )
-        },
-        // RESPONSE FOR DELETE REQUESTS
-        DELETE: async (req: NextApiRequest, res: NextApiResponse) => {
-            const { Post } = await connect() // connect to database
-            res.json(await Post.findByIdAndRemove(id).catch(catcher))
+            res.json(await fetch(
+                "https://api.pexels.com/v1/curated?page=11&per_page=18",
+                opts
+            ).catch(catcher))
         },
     }
 
