@@ -3,7 +3,7 @@ body {
   color: white;
   padding: 0;
   margin: 0;
-  background: url("https://media.istockphoto.com/vectors/white-and-grey-abstract-background-vector-id863521160");
+  background: url("https://cdn.pixabay.com/photo/2014/02/16/06/46/abstract-267046_960_720.png");
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -24,11 +24,26 @@ a {
   text-decoration: none;
 }
 
-header>img, div>img {  
+header>img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+img {
+  padding: .5em;
+}
+
+img.normal {
+  
+}
+
+img.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
 h1, h2 {

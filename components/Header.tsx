@@ -13,7 +13,7 @@ export function Header() {
         autoPlay: true
     });
     
-    const now = state.time/state.duration*100;
+    const now = state.time/117.394286*100;
     const nowRead = Math.round(now);
 
     return(
