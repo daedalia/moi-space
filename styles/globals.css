@@ -1,14 +1,42 @@
 html,
 body {
+  color: white;
   padding: 0;
   margin: 0;
+  background: url("https://media.istockphoto.com/vectors/white-and-grey-abstract-background-vector-id863521160");
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+div>div {
+  padding: 1em;
+}
+
+.progress {
+  height: 5rem !important;
+}
+
+hr {
+  
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+header>img, div>img {  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
 }
 
 * {

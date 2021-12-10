@@ -46,7 +46,9 @@ function Create(props: CreateProps) {
             <h1>Create a New Post</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" ref={title}></input>
+                <br/>
                 <input type="text" ref={body}></input>
+                <br/>
                 <input type="submit" value="create post"></input>
             </form>
         </div>
