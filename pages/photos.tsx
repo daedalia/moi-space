@@ -24,7 +24,7 @@ export function Photos(props: IndexProps) {
                 //            alt={photo.url}
                 //     />
                 // </div>
-                <Col xs={4}>
+                <Col key={photo.id} xs={4}>
                 <Image src={photo.src.large}
                            width={photo.width}
                            height={photo.height}
