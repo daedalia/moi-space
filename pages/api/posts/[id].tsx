@@ -12,7 +12,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     // GRAB ID FROM req.query (where next stores params)
     const id: string = req.query.id as string
 
-    // Potential Responses for /todos/:id
+    // Potential Responses
     const handleCase: ResponseFunctions = {
         // RESPONSE FOR GET REQUESTS
         GET: async (req: NextApiRequest, res: NextApiResponse) => {
