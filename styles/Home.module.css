@@ -1,5 +1,41 @@
 .container {
-  padding: 0 2rem;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.form {
+  width: 100%;
+}
+
+.formItem {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.formItem label {
+  display: block;
+}
+
+.formItem input[type='text'] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.formItem textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.message {
+  color: green;
 }
 
 .main {
@@ -62,7 +98,7 @@
   padding: 0.75rem;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
