@@ -17,12 +17,14 @@ function Index(props: IndexProps) {
           className="centre"          />
           <hr/>
           <h2>Crazy dancers</h2>
+          <div>
           <Image src="https://societyofrock.com/wp-content/uploads/2016/08/elvis-gif1.gif"/>
           <Image src="https://media4.giphy.com/media/TNYCPt5rHvfnq/giphy.gif"/>
           <Image src="https://media2.giphy.com/media/cklPOHnHepdwBLRnQp/200.gif"/>
           <Image src="https://booksparks.com/wp-content/uploads/2018/04/dance-party-dancing-GIF-downsized-1.gif"/>
           <Image src="https://thumbs.gfycat.com/AggressiveCavernousIrishwaterspaniel-max-1mb.gif"/>
           <Image src="https://thumbs.gfycat.com/JoyousHarmlessKite-size_restricted.gif"/>
+          </div>
           <hr/>
         <h2>Message board</h2>
           {posts.map(post => (
